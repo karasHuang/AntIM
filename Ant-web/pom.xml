@@ -1,0 +1,67 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.antstar</groupId>
+		<artifactId>AntIM</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>AntIM-web</artifactId>
+	<packaging>war</packaging>
+
+	<build>
+		<finalName>AntIM</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<targetPath>../classes</targetPath>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.antstar</groupId>
+			<artifactId>AntIM-service</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<propertiesName>propertiesValue</propertiesName>
+			</properties>
+		</profile>
+		<profile>
+			<id>sit</id>
+			<properties>
+				<propertiesName>propertiesValue</propertiesName>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<propertiesName>propertiesValue</propertiesName>
+			</properties>
+		</profile>
+	</profiles>
+
+
+</project>

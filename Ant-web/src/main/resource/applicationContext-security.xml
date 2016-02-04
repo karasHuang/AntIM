@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<!-- <context:component-scan base-package="com.twm.ewp.security.service.impl" />
+	<context:component-scan base-package="com.twm.ewp.security.authorization" />
+	<context:component-scan base-package="com.twm.ewp.security.authentication" />
+
+	<bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.PlaintextPasswordEncoder" />
+
+	<security:http pattern="/css/**" security="none" />
+	<security:http pattern="/image/**" security="none" />
+	<security:http pattern="/js/**" security="none" />
+	<security:http pattern="/login.jsp*" security="none" />
+	<security:http pattern="/notifyRoleChange" security="none" />
+	<security:http pattern="/ws/**" security="none" />
+	<security:http pattern="/un-authorization.jsp" security="none" />
+
+	<bean id="ssoFilter" class="com.twm.ewp.security.filter.TwmSsoInterfacingFilter">
+	</bean>
+
+	<security:http auto-config="false">
+		<security:custom-filter ref="ssoFilter"	before="SECURITY_CONTEXT_FILTER" />
+		<security:custom-filter ref="filterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR" />
+		<security:custom-filter ref="logoutFilter" position="LOGOUT_FILTER" />
+		<security:form-login login-page="/login.jsp" authentication-failure-handler-ref="customAuthenticationFailureHandler" />
+		<security:access-denied-handler ref="customAccessDeniedHandler" />
+	</security:http>
+
+	<bean id="filterSecurityInterceptor" class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="securityMetadataSource" ref="customFilterInvocationDefinitionSource" />
+	</bean>
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider
+			ref="customDaoAuthenticationProvider" />
+	</security:authentication-manager>
+
+	<bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<ref bean="roleVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+		<property name="rolePrefix" value="" />
+	</bean>
+
+	<bean id="customAuthenticationFailureHandler"
+		class="com.twm.ewp.security.authentication.CustomAuthenticationFailureHandler">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.springframework.security.authentication.BadCredentialsException">/login.jsp</prop>
+				<prop key="org.springframework.security.authentication.CredentialsExpiredException">/login.jsp</prop>
+				<prop key="org.springframework.security.authentication.DisabledException">/login.jsp</prop>
+				<prop key="org.springframework.security.authentication.LockedException">/login.jsp</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+		<constructor-arg index="0" value="/login.jsp" />
+		<constructor-arg index="1">
+			<list>
+				<ref bean="securityContextLogoutHandler" />
+				<ref bean="customLogoutHandler" />
+			</list>
+		</constructor-arg>
+		<property name="filterProcessesUrl" value="/j_spring_security_logout" />
+	</bean>
+
+	<bean id="securityContextLogoutHandler"
+		class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler" />
+
+	<bean id="customLogoutHandler"
+		class="com.twm.ewp.security.authentication.CustomLogoutHandler" />
+
+	<bean id="customAccessDeniedHandler"
+		class="com.twm.ewp.security.authentication.CustomAccessDeniedHandler" /> -->
+
+</beans>

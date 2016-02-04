@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+	<!-- <util:properties id="cassandraCommand" location="classpath:cassandra-command.properties" /> -->
+
+	<import resource="classpath:applicationContext-aop.xml" />
+	<import resource="classpath:applicationContext-dao.xml" />
+	<import resource="classpath:applicationContext-dataaccess.xml" />
+	<import resource="classpath:applicationContext-service.xml" />
+	<import resource="classpath:applicationContext-mail-sender.xml" />
+	<import resource="classpath:applicationContext-scheduler.xml" />
+	<!-- <import resource="classpath:applicationContext-security.xml" /> -->
+	<import resource="classpath:applicationContext-webservice.xml" />
+</beans>
