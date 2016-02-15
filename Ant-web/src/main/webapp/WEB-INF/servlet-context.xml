@@ -4,8 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<!-- <context:component-scan base-package="com.twm.ewp.controller" />
-	<context:component-scan base-package="com.twm.ewp.security.controller" />
+	<context:component-scan base-package="com.AntIM.controller" />
+	<!-- <context:component-scan base-package="com.twm.ewp.security.controller" />-->
 
 	<bean name="requestMapping"
 		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
@@ -20,12 +20,12 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 		<property name="order" value="2" />
-	</bean> -->
+	</bean> 
 
-	<!-- <bean id="xmlViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+	<bean id="xmlViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
 		<property name="location" value="/WEB-INF/ajax-view.xml" />
 		<property name="order" value="1" />
-	</bean> -->
+	</bean>
 	
 	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		one of the properties available; the maximum file size in bytes

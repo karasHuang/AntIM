@@ -27,7 +27,7 @@
 			<groupId>com.antstar</groupId>
 			<artifactId>AntIM-service</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
